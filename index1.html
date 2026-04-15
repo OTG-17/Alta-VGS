@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>фэфэка алта видерегаенде</title>
+ 
+
+  <style>
+     * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Source Sans Pro', 'Segoe UI', Arial, sans-serif; background: #f4f4f0; color: #1a1a1a; }
+  a { color: #986312; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .topbar {
+    background: #ffbf75;
+    color: #fff;
+    font-size: 13px;
+    padding: 7px 0;
+  }
+  .topbar-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .topbar a { color: #b8d9f0; font-size: 13px; }
+
+  .header {
+    background: #fff;
+    border-bottom: 3px solid #000000;
+    padding: 0;
+  }
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+ 
+  
+ 
+  .logo-text h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #003d6b;
+    line-height: 1.1;
+    letter-spacing: -0.3px;
+  }
+  .logo-text p {
+    font-size: 13px;
+    color: #555;
+    margin-top: 2px;
+  }
+  .header-search {
+    margin-left: auto;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .header-search input {
+    border: 1.5px solid #c5d0da;
+    border-radius: 3px;
+    padding: 7px 12px;
+    font-size: 14px;
+    width: 200px;
+    outline: none;
+    background: #f9f9f9;
+  }
+  .header-search button {
+    background: #707070;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 7px 14px;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  nav.main-nav {
+    background: #868686;
+  }
+  nav.main-nav ul {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    list-style: none;
+    gap: 0;
+  }
+  nav.main-nav ul li a {
+    display: block;
+    color: #d4eaf9;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 13px 18px;
+    border-bottom: 3px solid transparent;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  nav.main-nav ul li a:hover,
+  nav.main-nav ul li a.active {
+    background: #003d6b;
+    color: #fff;
+    border-bottom: 3px solid #000000;
+    text-decoration: none;
+  }
+
+  .breadcrumb {
+    background: #eaf1f7;
+    border-bottom: 1px solid #c8d8e5;
+    padding: 9px 0;
+    font-size: 13px;
+    color: #555;
+  }
+  .breadcrumb-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .breadcrumb span { color: #c0c0c0; margin: 0 6px; }
+
+  .ffk {
+  background-color: rgb(201, 201, 201);
+    color: #fff;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .ffk-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 52px 24px 44px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .ffk-text h2 {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.18;
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
+  }
+  .ffk-text h2 em {
+    font-style: normal;
+    color: #000000;
+  }
+  .ffk-text p {
+    font-size: 16px;
+    line-height: 1.65;
+    color: #000000;
+    margin-bottom: 22px;
+  }
+  .ffk-cta {
+    display: inline-block;
+    background: #868686;
+    color: #000000;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 12px 26px;
+    border-radius: 3px;
+    margin-right: 12px;
+  }
+  .ffk-cta:hover { background: #686868; text-decoration: none; }
+  .ffk-cta-sec {
+    display: inline-block;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 0;
+    border-bottom: 2px solid #190258;
+  }
+
+  .ffk-visual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .ffk-card {
+    background: rgba(0, 0, 0, 0.295);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    padding: 18px 14px;
+    text-align: center;
+  }
+  .ffk-card .icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .ffk-card h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .ffk-card p {
+    font-size: 12px;
+    color: #a8cce0;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .main-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 36px 24px 48px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 36px;
+  }
+
+  .section-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #505050;
+    border-left: 4px solid #000000;
+    padding-left: 14px;
+    margin-bottom: 20px;
+  }
+
+  .info-blocks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .info-block {
+    background: #fff;
+    border: 1px solid #dde5ec;
+    border-top: 3px solid #000000;
+    border-radius: 3px;
+    padding: 20px 18px;
+  }
+  .info-block h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #003d6b;
+    margin-bottom: 10px;
+  }
+  .info-block p, .info-block ul {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #3a3a3a;
+  }
+  .info-block ul {
+    padding-left: 18px;
+  }
+  .info-block ul li {
+    margin-bottom: 5px;
+  }
+
+  .prosess-section {
+    background: #fff;
+    border: 1px solid #dde5ec;
+    border-radius: 3px;
+    padding: 24px 22px;
+    margin-bottom: 24px;
+  }
+  .prosess-section h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #003d6b;
+    margin-bottom: 16px;
+  }
+  .prosess-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .step {
+    text-align: center;
+    padding: 16px 12px;
+    background: #eaf1f7;
+    border-radius: 4px;
+    position: relative;
+  }
+  .step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #000000;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .step h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #003d6b;
+    margin-bottom: 6px;
+  }
+  .step p {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .link-list {
+    list-style: none;
+    padding: 0;
+  }
+  .link-list li {
+    border-bottom: 1px solid #e2e8ee;
+    padding: 0;
+  }
+  .link-list li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #005b8e;
+    transition: background 0.1s;
+  }
+  .link-list li a:hover {
+    background: #eaf1f7;
+    text-decoration: none;
+  }
+  .link-list li a::before {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid #005b8e;
+    border-bottom: 2px solid #005b8e;
+    transform: rotate(-45deg);
+    flex-shrink: 0;
+  }
+
+  .sidebar-box {
+    background: #fff;
+    border: 1px solid #dde5ec;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .sidebar-box-header {
+    background: #003d6b;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 12px 16px;
+  }
+  .sidebar-box-body {
+    padding: 16px;
+  }
+  .sidebar-box-body p {
+    font-size: 13px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  .sidebar-box-body .kontakt-rad {
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .kontakt-rad strong {
+    min-width: 72px;
+    color: #555;
+    font-weight: 600;
+  }
+  .badge-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .badge {
+    background: #eaf1f7;
+    color: #004f80;
+    border: 1px solid #b8d0e0;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+  }
+
+  .nyhet-list { list-style: none; padding: 0; }
+  .nyhet-list li {
+    border-bottom: 1px solid #e8edf1;
+    padding: 12px 0;
+  }
+  .nyhet-list li:last-child { border-bottom: none; }
+  .nyhet-dato {
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+  .nyhet-list li a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #005b8e;
+    line-height: 1.4;
+  }
+
+  .btn-sok {
+    display: block;
+    background: #f7a600;
+    color: #003d6b;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    padding: 14px;
+    border-radius: 3px;
+    margin-top: 4px;
+  }
+
+  .footer {
+    background: #1a2e40;
+    color: #b0c4d4;
+    padding: 36px 0 20px;
+    margin-top: 0;
+  }
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 36px;
+    margin-bottom: 28px;
+  }
+  .footer h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 12px;
+  }
+  .footer p, .footer address {
+    font-size: 13px;
+    line-height: 1.7;
+    font-style: normal;
+    color: #8da8bc;
+  }
+  .footer-links { list-style: none; padding: 0; }
+  .footer-links li { margin-bottom: 8px; }
+  .footer-links a { color: #7ab3cf; font-size: 13px; }
+  .footer-links a:hover { color: #fff; }
+  .footer-bottom {
+    border-top: 1px solid #2e4459;
+    padding-top: 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-bottom p {
+    font-size: 12px;
+    color: #607d8f;
+  }
+  .ffk-logo-footer {
+    font-size: 13px;
+    font-weight: 700;
+    color: #5a8fa8;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 800px) {
+    .hero-inner, .main-content { grid-template-columns: 1fr; }
+    .info-blocks, .prosess-steps { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; }
+    nav.main-nav ul { flex-wrap: wrap; }
+    nav.main-nav ul li a { padding: 10px 12px; font-size: 13px; }
+  }
+  </style>
+</head>
+
+
+
+<body>
+  <div class="header">
+  <div class="header-inner">
+    <div class="logo-block">
+      <div class="logo-icon">
+       
+      </div>
+      <div class="logo-text">
+        <h1>Alta videregående skole</h1>
+        <p>Finnmark fylkeskommune</p>
+      </div>
+    </div>
+   
+  </div>
+</div>
+
+<nav class="main-nav">
+  <ul>
+    <li><a href="#">Hjem</a></li>
+    <li><a href="#">Utdanningstilbud</a></li>
+    <li><a href="#">Elever</a></li>
+    <li><a href="#">Foresatte</a></li>
+    <li><a href="#">Om skolen</a></li>
+    <li><a href="#">Søk skoleplass</a></li>
+  </ul>
+</nav>
+
+
+
+<div class="ffk">
+  <div class="ffk-inner">
+    <div class="ffk-text">
+      <h2>Informasjonsteknologi<br>og <em>medieproduksjon</em></h2>
+      <p>Et yrkesfaglig utdanningsprogram som kombinerer kreativitet og teknologi. Lær deg programmering, film, foto, grafisk design og IT-drift — med topp moderne utstyr og engasjerte lærere med bransjeerfaring.</p>
+      <a class="ffk-cta" href="#">Søk studieplass</a>
+      <a class="ffk-cta-sec" href="#">Les om fagbrev →</a>
+    </div>
+    <div class="ffk-visual">
+   
+    </div>
+  </div>
+</div>
+
+<div class="main-content">
+  <div class="left-col">
+    <h2 class="section-title">Om utdanningsprogrammet</h2>
+
+    <div class="info-blocks">
+      <div class="info-block">
+        <h3>Hva lærer du?</h3>
+        <p>Du utvikler ferdigheter innen kreativ problemløsning, historiefortelling og idéutvikling — og får solid faglig grunnlag i:</p>
+        <ul style="margin-top:8px;">
+          <li>Programmering og nettside­utvikling</li>
+          <li>Brukerstøtte, nettverk og IT-sikkerhet</li>
+          <li>Foto, film og podcast</li>
+          <li>Grafisk design og innholds­formidling</li>
+          <li>Flerkameraproduksjon og livestreaming</li>
+        </ul>
+      </div>
+      <div class="info-block">
+        <h3>Utstyr og fasiliteter</h3>
+        <p>Alta vgs har topp moderne undervisningslokaler med profesjonelt utstyr:</p>
+        <ul style="margin-top:8px;">
+          <li>Fullt utstyrt opptaksstudio</li>
+          <li>Flerkamera-produksjonsstudio</li>
+          <li>Fotostudio med profesjonell lyssetting</li>
+          <li>Avanserte redigeringsprogram (Adobe CC)</li>
+          <li>Datamaskiner og nettverkslaboratorium</li>
+        </ul>
+      </div>
+      <div class="info-block">
+        <h3>Vg1 — felles grunnlag</h3>
+        <p>I Vg1 får du innføring i alle tre programfagene:</p>
+        <ul style="margin-top:8px;">
+          <li>Konseptutvikling og programmering</li>
+          <li>Produksjon og historiefortelling</li>
+          <li>Teknologiforståelse</li>
+        </ul>
+        <p style="margin-top:10px;">I tillegg har du fellesfag som matematikk, engelsk, naturfag og kroppsøving.</p>
+      </div>
+      <div class="info-block">
+        <h3>Vg2 — velg retning</h3>
+        <p>Etter Vg1 velger du fordypning:</p>
+        <ul style="margin-top:8px;">
+          <li><strong>Informasjonsteknologi:</strong> IT-utvikling og IT-drift, nettverk, servere og brukerstøtte</li>
+          <li><strong>Medieproduksjon:</strong> Film, lyd, foto og grafisk design — hele produksjonsprosessen</li>
+        </ul>
+        <p style="margin-top:10px;">Begge gir yrkesfaglig fordypning (YFF) og praksis i bedrift.</p>
+      </div>
+    </div>
+
+    <div class="prosess-section">
+      <h3>Din vei gjennom utdanningen</h3>
+      <div class="prosess-steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h4>Vg1</h4>
+          <p>Felles opplæring i IT og mediefag. To praksisperioder i bedrift eller med eksterne oppdrag.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h4>Vg2</h4>
+          <p>Velg mellom IT eller medieproduksjon. Spesialisert undervisning med YFF og bransjeprosjekter.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h4>Lære / påbygg</h4>
+          <p>To år som lærling i bedrift og fagbrev — eller ett år påbygg for generell studiekompetanse.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="prosess-section">
+      <h3>Karrieremuligheter etter utdanningen</h3>
+      <p style="font-size:14px;color:#444;line-height:1.65;margin-bottom:14px;">Digitale ferdigheter er etterspurt i alle bransjer. Med fagbrev fra IM kan du jobbe som:</p>
+      <div class="badge-list">
+        <span class="badge">Innholdsprodusent</span>
+        <span class="badge">IT-driftsteknikker</span>
+        <span class="badge">IT-utvikler</span>
+        <span class="badge">Mediedesigner</span>
+        <span class="badge">Medietekniker</span>
+        <span class="badge">Grafisk designer</span>
+        <span class="badge">Webdesigner</span>
+        <span class="badge">Reklamebyrå</span>
+        <span class="badge">TV-produksjon</span>
+        <span class="badge">IT-avdeling</span>
+      </div>
+      <p style="font-size:13px;color:#666;margin-top:14px;line-height:1.6;">Du kan også søke høyere utdanning via Y-veien (relevant fagbrev) eller etter påbygg til generell studiekompetanse.</p>
+    </div>
+
+   
+  </div>
+
+  <div class="right-col">
+   
+
+    
+
+   
+
+    <div class="sidebar-box">
+      <div class="sidebar-box-header">Opptakskrav</div>
+      <div class="sidebar-box-body">
+        <p>Fullført og bestått grunnskole (ungdomstrinn). Ingen spesielle fagkrav — men du bør like å jobbe kreativt og teknisk.</p>
+        <div class="badge-list" style="margin-top:10px;">
+          <span class="badge">Åpent for alle</span>
+          <span class="badge">Kreativ interesse</span>
+          <span class="badge">Teknisk nysgjerrighet</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-inner">
+    <div>
+      <h4>Alta videregående skole</h4>
+  
+      <p style="margin-top:12px;">Alta videregående skole er en del av Finnmark fylkeskommune og tilbyr et bredt spekter av utdanningsprogrammer til elever i Finnmark.</p>
+    </div>
+    <div>
+     
+    </div>
+    <div>
+  
+    
+    </div>
+  </div>
+ 
+</div>
+
+</body>
+</html>
